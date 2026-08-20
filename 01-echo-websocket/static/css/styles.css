@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #181818;
+    color: #d4d4d4;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 850px;
+    background-color: #242424;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    height: 38px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    color: #aaa;
+    font-size: 13px;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.status {
+    color: #7ec699;
+}
+
+.terminal-body {
+    padding: 20px;
+    min-height: 420px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: #eee;
+}
+
+.divider {
+    height: 1px;
+    background-color: #3a3a3a;
+    margin: 16px 0;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.message {
+    line-height: 1.5;
+}
+
+.client {
+    color: #d4d4d4;
+}
+
+.server {
+    color: #7ec699;
+}
+
+.system-message {
+    color: #777;
+    font-size: 13px;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #3a3a3a;
+}
+
+.prompt {
+    color: #7ec699;
+    margin-right: 10px;
+}
+
+#input-textbox {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #eee;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#input-textbox::placeholder {
+    color: #666;
+}
+
+button {
+    margin-left: 12px;
+    padding: 6px 12px;
+    background: #303030;
+    border: 1px solid #4a4a4a;
+    border-radius: 3px;
+    color: #ccc;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a3a3a;
+    color: white;
+}
