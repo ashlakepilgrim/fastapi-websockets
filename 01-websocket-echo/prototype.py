@@ -6,10 +6,10 @@ app = FastAPI()
 html = """
 <html>
     <head>
-        <title>Echo WebSocket</title>
+        <title>WebSocket Echo</title>
     </head>
     <body>
-        <h1>Echo WebSocket</h1>
+        <h1>WebSocket Echo</h1>
         <form onsubmit="sendMessage(event)">
             <input id="input-textbox" type="text" />
             <button>Send</button>

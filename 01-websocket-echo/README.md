@@ -1,4 +1,4 @@
-# Echo WebSocket
+# WebSocket Echo
 
 A simple WebSocket echo server built with FastAPI.
 
