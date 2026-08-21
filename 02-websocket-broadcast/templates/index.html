@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Broadcast</title>
+    <link href="{{ url_for('static', path='css/styles.css') }}"rel="stylesheet">
+</head>
+<body>
+    <main class="terminal">
+        <header class="terminal-header">
+            <div class="brand">
+                <span class="prompt">~/</span> websocket-broadcast
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                connected
+            </div>
+        </header>
+        <div class="terminal-body">
+            <section class="chat-panel">
+                <div class="panel-title">
+                    <span>messages</span>
+                </div>
+                <div id="messages" class="messages"></div>
+                <form id="message-form" class="input-line">
+                    <span class="input-prompt">&gt;</span>
+                    <input
+                        id="input-box"
+                        type="text"
+                        autocomplete="off"
+                        autofocus
+                        placeholder="type a message..."
+                    />
+                </form>
+            </section>
+            <aside class="members-panel">
+                <div class="panel-title">
+                    <span>members</span>
+                    <span id="member-count">0</span>
+                </div>
+                <div id="members" class="members"></div>
+            </aside>
+        </div>
+        <footer class="terminal-footer">
+            <span>websocket-broadcast</span>
+            <span>enter ↵ send</span>
+        </footer>
+    </main>
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+</body>
+</html>
