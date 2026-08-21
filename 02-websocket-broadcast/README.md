@@ -2,6 +2,8 @@
 
 A simple multi-client WebSocket broadcast server built with FastAPI.
 
+<img width="2560" height="1440" alt="2026-08-21_18-24-07" src="https://github.com/user-attachments/assets/0ad1079f-359f-4433-8dd6-c8da1bbc7893" />
+
 ## Features
 
 - FastAPI WebSocket endpoint
