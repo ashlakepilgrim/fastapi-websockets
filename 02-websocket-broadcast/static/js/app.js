@@ -1,4 +1,4 @@
-const uuid = crypto.randomUUID();
+const uuid = Date.now().toString(36) + Math.random().toString(36).slice(2);
 const websocketUrl = `ws://${window.location.host}/ws?client_id=${uuid}`;
 
 const ws = new WebSocket(websocketUrl);
@@ -111,7 +111,7 @@ ws.onmessage = (event) => {
      */
 
     const joined = data.match(
-        /^Client ([a-f0-9-]+) joined the chat!$/
+        /^Client ([a-z0-9]+) joined the chat!$/
     );
 
     if (joined) {
@@ -124,7 +124,7 @@ ws.onmessage = (event) => {
     }
 
     const left = data.match(
-        /^Client ([a-f0-9-]+) left the chat!$/
+        /^Client ([a-z0-9]+) left the chat!$/
     );
 
     if (left) {
@@ -137,7 +137,7 @@ ws.onmessage = (event) => {
     }
 
     const chat = data.match(
-        /^Client \[([a-f0-9-]+)\]: (.*)$/
+        /^Client \[([a-z0-9]+)\]: (.*)$/
     );
 
     if (chat) {
