@@ -1,0 +1,51 @@
+[ISSUE #1]
+WebSocket Connection Failure In Project - WebSocket Broadcast
+
+Description:
+WebSocket connection failed when accessing the application
+through private IP addresses on both the host machine and
+other devices.
+
+Symptom:
+HTTP, CSS, and JavaScript loaded successfully, but the
+WebSocket connection was never initiated.
+
+Cause:
+crypto.randomUUID() was not supported in the browser
+environment, causing JavaScript execution to stop before
+the WebSocket connection was created.
+
+Fix:
+Replaced crypto.randomUUID() with a base-36 client ID
+generated using Date.now() and Math.random().
+
+Secondary Fix:
+Updated client ID regex patterns from [a-f0-9-]+ to [a-z0-9]+
+to support the new client ID format.
+
+Result:
+WebSocket connections now work correctly through private
+IP addresses and across devices on the same network.
+
+====================================================================
+
+[ISSUE #2]
+Hardcoded WebSocket URL In Project - WebSocket Echo
+
+Description:
+WebSocket Echo used a hardcoded localhost URL, preventing
+the application from connecting correctly when accessed
+through a private IP or from another device.
+
+Cause:
+The WebSocket client was explicitly connecting to
+ws://localhost:8000/ws instead of the host serving the page.
+
+Fix:
+Replaced the hardcoded URL with a dynamic WebSocket URL
+using window.location.host.
+
+Result:
+The WebSocket connection now automatically uses the host
+and port from the current page, allowing the application
+to work across devices on the same network.
