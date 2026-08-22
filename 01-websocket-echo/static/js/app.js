@@ -1,4 +1,5 @@
-const ws = new WebSocket("ws://localhost:8000/ws");
+const websocketUrl = `ws://${window.location.host}/ws`;
+const ws = new WebSocket(websocketUrl);
 
 const form = document.getElementById("message-form");
 const input = document.getElementById("input-textbox");
